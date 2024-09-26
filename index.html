@@ -4,41 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Money Map Pro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
-    <header>
-        <h1>Bienvenido a Money Map Pro</h1>
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Money Map Pro</h1>
     </header>
-    <main>
-        <section id="transaction-form">
+    <main class="container my-4">
+        <section id="transaction-form" class="mb-4">
             <h2>Registrar Transacción</h2>
-            <form id="form">
-                <input type="text" id="description" placeholder="Descripción" required>
-                <input type="number" id="amount" placeholder="Monto" required>
-                
-                <label for="type">Tipo de Transacción</label>
-                <select id="type" required>
-                    <option value="income">Ingreso</option>
-                    <option value="expense">Gasto</option>
-                </select>
-                
-                <button type="submit">Agregar</button>
+            <form id="form" class="row g-3 justify-content-center">
+                <div class="col-12 col-md-5">
+                    <input type="text" id="description" class="form-control" placeholder="Descripción" required>
+                </div>
+                <div class="col-6 col-md-3">
+                    <input type="number" id="amount" class="form-control" placeholder="Monto" step="0.01" required>
+                </div>
+                <div class="col-6 col-md-2">
+                    <label for="type" class="form-label visually-hidden">Tipo de Transacción</label>
+                    <select id="type" class="form-select" required>
+                        <option value="income">Ingreso</option>
+                        <option value="expense">Gasto</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-2">
+                    <button type="submit" class="btn btn-success w-100">Agregar</button>
+                </div>
             </form>
         </section>
-        
-        <section id="transactions">
+
+        <section id="transactions" class="mb-4">
             <h2>Transacciones</h2>
-            <ul id="transaction-list"></ul>
+            <ul id="transaction-list" class="list-group"></ul>
         </section>
 
         <section id="stats">
             <h2>Estadísticas</h2>
-            <div id="total-income">Total Ingresos: $0</div>
-            <div id="total-expenses">Total Gastos: $0</div>
-            <div id="balance">Balance: $0</div>
+            <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div id="total-income" class="badge bg-success fs-5 mb-2 mb-md-0">Total Ingresos: $0</div>
+                <div id="total-expenses" class="badge bg-danger fs-5 mb-2 mb-md-0">Total Gastos: $0</div>
+                <div id="balance" class="badge bg-info fs-5">Balance: $0</div>
+            </div>
         </section>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
