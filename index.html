@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money Map Pro</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Money Map Pro</h1>
+    </header>
+    <main>
+        <section id="transaction-form">
+            <h2>Registrar Transacción</h2>
+            <form id="form">
+                <input type="text" id="description" placeholder="Descripción" required>
+                <input type="number" id="amount" placeholder="Monto" required>
+                
+                <label for="type">Tipo de Transacción</label>
+                <select id="type" required>
+                    <option value="income">Ingreso</option>
+                    <option value="expense">Gasto</option>
+                </select>
+                
+                <button type="submit">Agregar</button>
+            </form>
+        </section>
+        
+        <section id="transactions">
+            <h2>Transacciones</h2>
+            <ul id="transaction-list"></ul>
+        </section>
+
+        <section id="stats">
+            <h2>Estadísticas</h2>
+            <div id="total-income">Total Ingresos: $0</div>
+            <div id="total-expenses">Total Gastos: $0</div>
+            <div id="balance">Balance: $0</div>
+        </section>
+    </main>
+    <script src="js/script.js"></script>
+</body>
+</html>
